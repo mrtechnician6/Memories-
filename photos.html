@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="title">📸 Photo Album</h1>
+<div id="gallery"></div>
+
+<script src="script.js"></script>
+
+<script>
+fetch("files.json")
+  .then(res => res.json())
+  .then(data => {
+
+    let gallery = document.getElementById("gallery");
+
+    data.photos.forEach(name => {
+      let img = document.createElement("img");
+      img.src = "media/photos/" + name;
+      img.loading = "lazy";
+      gallery.appendChild(img);
+    });
+
+  });
+</script>
+
+</body>
+</html>
