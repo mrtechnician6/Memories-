@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Private Album</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lock">
+  <h2>🔒 Private Album</h2>
+  <p>What is my favorite sport?</p>
+  <input type="text" id="answer">
+  <button onclick="checkAnswer()">Unlock</button>
+</div>
+
+<!-- ALBUM SELECTION -->
+<div id="albums" style="display:none;">
+  <h1>Select Album</h1>
+  <button onclick="loadPhotos()">📸 Photos</button>
+  <button onclick="loadVideos()">🎥 Videos</button>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
