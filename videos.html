@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Videos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="title">🎥 Video Album</h1>
+<div id="gallery"></div>
+
+<script src="script.js"></script>
+
+<script>
+fetch("files.json")
+  .then(res => res.json())
+  .then(data => {
+
+    let gallery = document.getElementById("gallery");
+
+    data.videos.forEach(name => {
+      let video = document.createElement("video");
+      video.src = "media/videos/" + name;
+      video.controls = true;
+      video.loading = "lazy";
+      gallery.appendChild(video);
+    });
+
+  });
+</script>
+
+</body>
+</html>
